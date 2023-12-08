@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="公共返回对象">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="登录之后返回token" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +37,8 @@
     </excluded-from-favorite>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Blues 2142" />
+        <option value="blues 2142" />
         <option value="王湛轶" />
       </list>
     </option>
@@ -73,7 +73,7 @@
       <option value="200" />
       <option value="300" />
     </hideBySeverity>
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -89,7 +89,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "<未知>",
+    "git-widget-placeholder": "dev",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "D:/Demos/yeb",
     "node.js.detected.package.eslint": "true",
@@ -100,7 +100,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -136,6 +136,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.CodeGenerator" />
+        <item itemvalue="应用程序.CodeGenerator" />
+        <item itemvalue="应用程序.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +154,7 @@
       <workItem from="1701685006902" duration="1094000" />
       <workItem from="1701737985547" duration="2404000" />
       <workItem from="1701842786349" duration="13175000" />
+      <workItem from="1701919212616" duration="12417000" />
     </task>
     <task id="LOCAL-00001" summary="搭建项目框架">
       <option name="closed" value="true" />
@@ -185,7 +188,87 @@
       <option name="project" value="LOCAL" />
       <updated>1701918042573</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701919247853</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701919247853</updated>
+    </task>
+    <task id="LOCAL-00006" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926209608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926209608</updated>
+    </task>
+    <task id="LOCAL-00007" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926427179</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926427179</updated>
+    </task>
+    <task id="LOCAL-00008" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926650289</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926650289</updated>
+    </task>
+    <task id="LOCAL-00009" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926765320</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926765320</updated>
+    </task>
+    <task id="LOCAL-00010" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926854595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926854595</updated>
+    </task>
+    <task id="LOCAL-00011" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701927210614</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701927210614</updated>
+    </task>
+    <task id="LOCAL-00012" summary="登录之后返回token">
+      <option name="closed" value="true" />
+      <created>1701932782241</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701932782241</updated>
+    </task>
+    <task id="LOCAL-00013" summary="登录之后返回token">
+      <option name="closed" value="true" />
+      <created>1701932810956</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701932810956</updated>
+    </task>
+    <task id="LOCAL-00014" summary="登录之后返回token">
+      <option name="closed" value="true" />
+      <created>1701998268350</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701998268350</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +310,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -237,7 +332,8 @@
     <MESSAGE value="搭建项目框架" />
     <MESSAGE value="登录页面逻辑建立" />
     <MESSAGE value="公共返回对象" />
-    <option name="LAST_COMMIT_MESSAGE" value="公共返回对象" />
+    <MESSAGE value="登录之后返回token" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录之后返回token" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -249,7 +345,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/JwtTokenUtil.java</url>
           <line>45</line>
-          <properties class="com.xxxx.server.config.security.JwtTokenUtil" method="isTokenExpired">
+          <properties class="com.xxxx.server.config.security.JwtTokenUtil">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
