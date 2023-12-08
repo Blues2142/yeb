@@ -16,4 +16,6 @@ import jakarta.servlet.http.HttpServletRequest;
 public interface IAdminService extends IService<Admin> {
     //登录之后返回token
     RespBean login(String username, String password, HttpServletRequest request);
+    //根据用户名获取用户
+    Admin getAdminByUserName(String username);
 }

@@ -29,6 +29,7 @@ import java.util.Map;
  */
 @Service
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements IAdminService {
+
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired
@@ -61,4 +62,9 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         return RespBean.success("登录成功",tokenMap);
     }
 
+    @Override
+    public Admin getAdminByUserName(String username) {
+        return null;
+    }
+    //根据用户名获取用户
 }
