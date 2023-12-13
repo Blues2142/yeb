@@ -13,15 +13,12 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="获取当前登录用户信息">
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/JwtAuthencationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="对于spring security中由于6.2.0升级导致的方法弃用进行升级">
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestfulAccessDeniedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/controller/LoginContorller.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +76,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/yeb-server/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JavaAutoRunManager">
     <enabled-run-configurations>
@@ -97,10 +95,8 @@
       <option value="15" />
       <option value="16" />
       <option value="100" />
-      <option value="200" />
-      <option value="300" />
     </hideBySeverity>
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -115,6 +111,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
@@ -184,7 +181,7 @@
       <workItem from="1701737985547" duration="2404000" />
       <workItem from="1701842786349" duration="13175000" />
       <workItem from="1701919212616" duration="12417000" />
-      <workItem from="1702258004804" duration="20596000" />
+      <workItem from="1702258004804" duration="23138000" />
     </task>
     <task id="LOCAL-00001" summary="搭建项目框架">
       <option name="closed" value="true" />
@@ -298,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701998268350</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="对于spring security中由于6.2.0升级导致的方法弃用进行升级">
+      <option name="closed" value="true" />
+      <created>1702451637182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702451637182</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +359,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -371,7 +376,8 @@
     <MESSAGE value="登录页面逻辑建立" />
     <MESSAGE value="公共返回对象" />
     <MESSAGE value="登录之后返回token" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录之后返回token" />
+    <MESSAGE value="对于spring security中由于6.2.0升级导致的方法弃用进行升级" />
+    <option name="LAST_COMMIT_MESSAGE" value="对于spring security中由于6.2.0升级导致的方法弃用进行升级" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

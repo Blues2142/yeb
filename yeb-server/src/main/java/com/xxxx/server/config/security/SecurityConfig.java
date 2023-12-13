@@ -20,6 +20,10 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfig {
     @Resource
     private IAdminService adminService;
+    @Resource
+    private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
+    @Resource
+    private RestAuthorizationEntryPoint restAuthorizationEntryPoint;
     @Bean
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
@@ -31,11 +35,12 @@ public class SecurityConfig {
         //基于token，不需要session
         http.sessionManagement(sessionManagement->sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.authorizeHttpRequests(authorizeHttpRequests->authorizeHttpRequests.requestMatchers("/login","/logout").permitAll().anyRequest().authenticated());
+        //禁用缓存
         http.headers(headers->headers.cacheControl(withDefaults()));
         //添加jwt登陆授权拦截器
         http.addFilterBefore(jwtAuthencationTokenFilter(),UsernamePasswordAuthenticationFilter.class);
         //添加自定义未授权和未登录结果返回
-        http.exceptionHandling(exceptionHandling->exceptionHandling.accessDeniedHandler().authenticationEntryPoint());
+        http.exceptionHandling(exceptionHandling->exceptionHandling.accessDeniedHandler(restfulAccessDeniedHandler).authenticationEntryPoint(restAuthorizationEntryPoint));
         return http.build();
     }
 
