@@ -7,8 +7,8 @@ import com.xxxx.server.pojo.RespBean;
 import com.xxxx.server.service.IAdminService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 //登录
-@Api(tags = "LoginContorller")
+@Api(tags = "LoginController")
 @RestController
-public class LoginContorller {
-    @Autowired
+public class LoginController {
+    @Resource
     private IAdminService adminService;
     @ApiOperation(value = "登陆之后返回token")
     @PostMapping("/login")
