@@ -69,6 +69,10 @@
             <version>0.9.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -14,11 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="对于spring security中由于6.2.0升级导致的方法弃用进行升级">
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestfulAccessDeniedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/___1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/com/xxxx/generator/CodeGenerator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/com/xxxx/generator/CodeGenerator$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/com/xxxx/generator/CodeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,9 +113,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.YebApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
@@ -121,7 +130,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "库",
+    "project.structure.last.edited": "项目",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.55172414",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
@@ -146,7 +155,7 @@
       <recent name="com.xxxx.server.config.security" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.YebApplication">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xxxx.generator.CodeGenerator" />
       <module name="yeb-generator" />
@@ -160,8 +169,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="YebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yeb-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxxx.server.YebApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxxx.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.YebApplication" />
+      <item itemvalue="应用程序.CodeGenerator" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.YebApplication" />
         <item itemvalue="应用程序.CodeGenerator" />
         <item itemvalue="应用程序.CodeGenerator" />
       </list>
@@ -389,7 +416,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/JwtTokenUtil.java</url>
           <line>45</line>
-          <properties class="com.xxxx.server.config.security.JwtTokenUtil" method="isTokenExpired">
+          <properties class="com.xxxx.server.config.security.JwtTokenUtil">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
