@@ -6,9 +6,19 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="yeb-server" />
+      <module name="yeb" />
+    </loaded-modules>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="公共返回对象">
+    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="对于spring security中由于6.2.0升级导致的方法弃用进行升级">
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestfulAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +49,8 @@
     </excluded-from-favorite>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Blues 2142" />
+        <option value="blues 2142" />
         <option value="王湛轶" />
       </list>
     </option>
@@ -50,8 +62,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="76bff679-2e0b-4220-bc9a-bdae0e9519b5" />
+        <option name="url" value="https://github.com/Blues2142/yeb" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/yeb-server/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/RestAuthorizationEntryPoint.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JavaAutoRunManager">
     <enabled-run-configurations>
@@ -70,8 +95,6 @@
       <option value="15" />
       <option value="16" />
       <option value="100" />
-      <option value="200" />
-      <option value="300" />
     </hideBySeverity>
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -88,8 +111,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "<未知>",
+    "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "D:/Demos/yeb",
     "node.js.detected.package.eslint": "true",
@@ -97,10 +121,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "库",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "project.structure.side.proportion": "0.55172414",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -117,6 +141,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Demos\yeb\yeb-server\src\main\resources\config" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.xxxx.server.config.security" />
     </key>
   </component>
   <component name="RunManager">
@@ -136,6 +163,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.CodeGenerator" />
+        <item itemvalue="应用程序.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +180,8 @@
       <workItem from="1701685006902" duration="1094000" />
       <workItem from="1701737985547" duration="2404000" />
       <workItem from="1701842786349" duration="13175000" />
+      <workItem from="1701919212616" duration="12417000" />
+      <workItem from="1702258004804" duration="23138000" />
     </task>
     <task id="LOCAL-00001" summary="搭建项目框架">
       <option name="closed" value="true" />
@@ -185,11 +215,102 @@
       <option name="project" value="LOCAL" />
       <updated>1701918042573</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701919247853</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701919247853</updated>
+    </task>
+    <task id="LOCAL-00006" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926209608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926209608</updated>
+    </task>
+    <task id="LOCAL-00007" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926427179</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926427179</updated>
+    </task>
+    <task id="LOCAL-00008" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926650289</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926650289</updated>
+    </task>
+    <task id="LOCAL-00009" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926765320</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926765320</updated>
+    </task>
+    <task id="LOCAL-00010" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701926854595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701926854595</updated>
+    </task>
+    <task id="LOCAL-00011" summary="公共返回对象">
+      <option name="closed" value="true" />
+      <created>1701927210614</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701927210614</updated>
+    </task>
+    <task id="LOCAL-00012" summary="登录之后返回token">
+      <option name="closed" value="true" />
+      <created>1701932782241</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701932782241</updated>
+    </task>
+    <task id="LOCAL-00013" summary="登录之后返回token">
+      <option name="closed" value="true" />
+      <created>1701932810956</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701932810956</updated>
+    </task>
+    <task id="LOCAL-00014" summary="登录之后返回token">
+      <option name="closed" value="true" />
+      <created>1701998268350</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701998268350</updated>
+    </task>
+    <task id="LOCAL-00015" summary="对于spring security中由于6.2.0升级导致的方法弃用进行升级">
+      <option name="closed" value="true" />
+      <created>1702451637182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702451637182</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnloadedModulesList">
+    <module name="yeb-generator" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -197,6 +318,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="dev" />
@@ -227,7 +353,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -237,7 +375,9 @@
     <MESSAGE value="搭建项目框架" />
     <MESSAGE value="登录页面逻辑建立" />
     <MESSAGE value="公共返回对象" />
-    <option name="LAST_COMMIT_MESSAGE" value="公共返回对象" />
+    <MESSAGE value="登录之后返回token" />
+    <MESSAGE value="对于spring security中由于6.2.0升级导致的方法弃用进行升级" />
+    <option name="LAST_COMMIT_MESSAGE" value="对于spring security中由于6.2.0升级导致的方法弃用进行升级" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
