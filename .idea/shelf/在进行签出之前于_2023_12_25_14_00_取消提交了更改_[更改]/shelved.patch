@@ -1,0 +1,41 @@
+Index: yeb-server/target/classes/config/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  #端口\r\n  port: 8081\r\n\r\nspring:\r\n  # 数据源配置\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/voa2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai\r\n    username: root\r\n    password: 123456\r\n    hikari:\r\n      # 连接池名\r\n      pool-name: DateHikariCP\r\n      # 最小空闲连接数\r\n      minimum-idle: 5\r\n      #空闲连接存活最大时间，默认600000(10分钟)\r\n      idle-timeout: 180000\r\n      #最大连接数，默认10\r\n      maximum-pool-size: 10\r\n      #从连接池返回的连接的自动提交\r\n      auto-commit: true\r\n      # 连接最大存活时间，0表示永久存活，默认1800000(30分钟)\r\n      max-lifetime: 1800000\r\n      # 连接超时时间，默认30000 (30秒)\r\n      connection-timeout: 30000\r\n      #测试连接是否可用的查询语句\r\n      connection-test-query: SELECT 1\r\n# Mybatis-plus配置\r\nmybatis-plus :\r\n  #配置Mapper映射文件\r\n  mapper-locations: classpath*:/mapper/*Mapper.xml\r\n  # 配置MyBatis数据返回类型别名（默认别名是类名）\r\n  type-aliases-package: com.xxx.server.pojo\r\n  configuration:\r\n    # 自动驼峰命名\r\n    map-underscore-to-camel-case: false\r\n\r\n#Mybatis SQL 打印（方法借口所在的包，不是Mapper.xml所在的包）\r\nlogging:\r\n  level:\r\n    com.xxxx.server.mapper: debug\r\n#注意这个里面主要注意的一些细节问题\r\n#1.在冒号后需要有空格，不然将无法正常运行\r\n#2.它似乎默认有几级目录，如果另一个新组件没定格写的话将默认还是上一个组件的配置
+===================================================================
+diff --git a/yeb-server/target/classes/config/application.yml b/yeb-server/target/classes/config/application.yml
+--- a/yeb-server/target/classes/config/application.yml	
++++ b/yeb-server/target/classes/config/application.yml	
+@@ -6,7 +6,7 @@
+   # 数据源配置
+   datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+-    url: jdbc:mysql://localhost:3306/voa2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai
++    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai
+     username: root
+     password: 123456
+     hikari:
+@@ -36,10 +36,21 @@
+     # 自动驼峰命名
+     map-underscore-to-camel-case: false
+ 
+-#Mybatis SQL 打印（方法借口所在的包，不是Mapper.xml所在的包）
++#Mybatis SQL 打印（方法接口所在的包，不是Mapper.xml所在的包）
+ logging:
+   level:
+     com.xxxx.server.mapper: debug
++
++jwt:
++  #jwt存储的请求头
++  tokenHeader: Authorization
++  #jwt 加密使用密钥
++  secret: yeb-secret
++  #jwt 超期限时间 （60*60*24）
++  expiration: 604800
++  #jwt 负载中拿到开头
++  tokenHead: Bearer
++
+ #注意这个里面主要注意的一些细节问题
+ #1.在冒号后需要有空格，不然将无法正常运行
+ #2.它似乎默认有几级目录，如果另一个新组件没定格写的话将默认还是上一个组件的配置
+\ No newline at end of file

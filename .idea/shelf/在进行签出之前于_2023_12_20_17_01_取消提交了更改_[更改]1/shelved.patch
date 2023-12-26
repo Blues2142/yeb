@@ -1,0 +1,980 @@
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/AdminRoleMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.AdminRole;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface AdminRoleMapper extends BaseMapper<AdminRole> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/AdminRoleMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/AdminRoleMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/AdminRoleMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/AdminRoleMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.AdminRole;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface AdminRoleMapper extends BaseMapper<AdminRole> {
+ 
+ }
+Index: yeb-server/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <parent>\r\n        <groupId>com.xxxx</groupId>\r\n        <artifactId>yeb</artifactId>\r\n        <version>0.0.1-SNAPSHOT</version>\r\n    </parent>\r\n\r\n\r\n    <artifactId>yeb-server</artifactId>\r\n    <packaging>jar</packaging>\r\n\r\n    <name>yeb-server</name>\r\n    <url>https://maven.apache.org</url>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <!--web 依赖-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>\r\n        <!--lombok 依赖-->\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <optional>true</optional>\r\n        </dependency>\r\n        <!--mysql 依赖-->\r\n        <dependency>\r\n            <groupId>com.mysql</groupId>\r\n            <artifactId>mysql-connector-j</artifactId>\r\n            <version>8.0.33</version>\r\n        </dependency>\r\n        <!--mybatis-plus 依赖-->\r\n        <dependency>\r\n            <groupId>com.baomidou</groupId>\r\n            <artifactId>mybatis-plus-boot-starter</artifactId>\r\n            <version>3.3.1.tmp</version>\r\n        </dependency>\r\n        <!--swagger2 依赖-->\r\n        <dependency>\r\n            <groupId>io.springfox</groupId>\r\n            <artifactId>springfox-swagger2</artifactId>\r\n            <version>2.7.0</version>\r\n        </dependency>\r\n        <!--Swagger第三方UI依赖-->\r\n        <dependency>\r\n            <groupId>com.github.xiaoymin</groupId>\r\n            <artifactId>swagger-bootstrap-ui</artifactId>\r\n            <version>1.9.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.security</groupId>\r\n            <artifactId>spring-security-core</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.jsonwebtoken</groupId>\r\n            <artifactId>jjwt</artifactId>\r\n            <version>0.9.0</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n</project>\r\n<!--注意这个文件中会遇到的一些问题-->\r\n        <!--1.这是一个工程文件的配置文件，它主要决定了它的父级和子级目录所使用的框架，工具的版本和依赖-->\r\n        <!--2.如果报错，也就是标红，应该首先检查所需要使用的工具是不是有名称，版本号错误的情况-->\r\n        <!--3.如果依然报错，则应该在没有填写版本号的位置书写版本号，并且要注意如果与本地安装重名，应优先选择本地的版本号-->
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/pom.xml b/yeb-server/pom.xml
+--- a/yeb-server/pom.xml	
++++ b/yeb-server/pom.xml	
+@@ -40,7 +40,7 @@
+         <dependency>
+             <groupId>com.baomidou</groupId>
+             <artifactId>mybatis-plus-boot-starter</artifactId>
+-            <version>3.3.1.tmp</version>
++            <version>3.1.0</version>
+         </dependency>
+         <!--swagger2 依赖-->
+         <dependency>
+Index: yeb-server/src/main/resources/config/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  #端口\r\n  port: 8081\r\n\r\nspring:\r\n  # 数据源配置\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/voa2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai\r\n    username: root\r\n    password: 123456\r\n    hikari:\r\n      # 连接池名\r\n      pool-name: DateHikariCP\r\n      # 最小空闲连接数\r\n      minimum-idle: 5\r\n      #空闲连接存活最大时间，默认600000(10分钟)\r\n      idle-timeout: 180000\r\n      #最大连接数，默认10\r\n      maximum-pool-size: 10\r\n      #从连接池返回的连接的自动提交\r\n      auto-commit: true\r\n      # 连接最大存活时间，0表示永久存活，默认1800000(30分钟)\r\n      max-lifetime: 1800000\r\n      # 连接超时时间，默认30000 (30秒)\r\n      connection-timeout: 30000\r\n      #测试连接是否可用的查询语句\r\n      connection-test-query: SELECT 1\r\n# Mybatis-plus配置\r\nmybatis-plus :\r\n  #配置Mapper映射文件\r\n  mapper-locations: classpath*:/mapper/*Mapper.xml\r\n  # 配置MyBatis数据返回类型别名（默认别名是类名）\r\n  type-aliases-package: com.xxx.server.pojo\r\n  configuration:\r\n    # 自动驼峰命名\r\n    map-underscore-to-camel-case: false\r\n\r\n#Mybatis SQL 打印（方法借口所在的包，不是Mapper.xml所在的包）\r\nlogging:\r\n  level:\r\n    com.xxxx.server.mapper: debug\r\n\r\njwt:\r\n  #jwt存储的请求头\r\n  tokenHeader: Authorization\r\n  #jwt 加密使用密钥\r\n  secret: yeb-secret\r\n  #jwt 超期限时间 （60*60*24）\r\n  expiration: 604800\r\n  #jwt 负载中拿到开头\r\n  tokenHead: Bearer\r\n\r\n#注意这个里面主要注意的一些细节问题\r\n#1.在冒号后需要有空格，不然将无法正常运行\r\n#2.它似乎默认有几级目录，如果另一个新组件没定格写的话将默认还是上一个组件的配置
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/resources/config/application.yml b/yeb-server/src/main/resources/config/application.yml
+--- a/yeb-server/src/main/resources/config/application.yml	
++++ b/yeb-server/src/main/resources/config/application.yml	
+@@ -6,7 +6,7 @@
+   # 数据源配置
+   datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+-    url: jdbc:mysql://localhost:3306/voa2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai
++    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai
+     username: root
+     password: 123456
+     hikari:
+Index: .idea/shelf/___1.xml
+===================================================================
+diff --git a/.idea/shelf/___1.xml b/.idea/shelf/___1.xml
+deleted file mode 100644
+--- a/.idea/shelf/___1.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="在变基之前未提交的更改_[更改]1" date="1701918340015" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[更改]1/shelved.patch" />
+-  <option name="DESCRIPTION" value="在变基之前未提交的更改 [更改]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/在变基之前未提交的更改_[更改]1/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/在变基之前未提交的更改_[更改]1/shelved.patch b/.idea/shelf/在变基之前未提交的更改_[更改]1/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/在变基之前未提交的更改_[更改]1/shelved.patch	
++++ /dev/null	
+@@ -1,156 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AnalysisUIOptions\">\r\n    <option name=\"SCOPE_TYPE\" value=\"3\" />\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"cbff0af2-3ee2-4976-984f-f4543bf90110\" name=\"更改\" comment=\"登录页面逻辑建立\">\r\n      <change afterPath=\"$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/pojo/RespBean.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"AnnotationType\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"HARD\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/yeb-server/pom.xml\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"JavaAutoRunManager\">\r\n    <enabled-run-configurations>\r\n      <run-configuration type=\"MavenRunConfiguration\" name=\" [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate]\" />\r\n    </enabled-run-configurations>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <hideBySeverity>\r\n      <option value=\"11\" />\r\n      <option value=\"12\" />\r\n      <option value=\"13\" />\r\n      <option value=\"14\" />\r\n      <option value=\"15\" />\r\n      <option value=\"16\" />\r\n      <option value=\"100\" />\r\n      <option value=\"200\" />\r\n      <option value=\"300\" />\r\n    </hideBySeverity>\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YsP87f9FjiVetaJaqCGdiW80tD\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"jdk.selected.JAVA_MODULE\": \"openjdk-21\",\r\n    \"last_opened_file_path\": \"D:/Demos/yeb/yeb-server/src/main/java/com/xxxx/server/config/security\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"模块\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"editor.preferences.tabs\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"com.xxxx.pojo\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\config\\security\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\resources\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\service\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\pojo\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\mapper\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\resources\\config\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"CodeGenerator\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.xxxx.generator.CodeGenerator\" />\r\n      <module name=\"yeb-generator\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.xxxx.generator.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"应用程序.CodeGenerator\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"cbff0af2-3ee2-4976-984f-f4543bf90110\" name=\"更改\" comment=\"\" />\r\n      <created>1701311153472</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1701311153472</updated>\r\n      <workItem from=\"1701311154449\" duration=\"42203000\" />\r\n      <workItem from=\"1701684845914\" duration=\"143000\" />\r\n      <workItem from=\"1701685006902\" duration=\"1094000\" />\r\n      <workItem from=\"1701737985547\" duration=\"2404000\" />\r\n      <workItem from=\"1701842786349\" duration=\"11218000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"搭建项目框架\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701415472575</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701415472575</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"登录页面逻辑建立\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701851953912</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701851953912</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"搭建项目框架\" />\r\n    <MESSAGE value=\"登录页面逻辑建立\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"登录页面逻辑建立\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/JwtTokenUtil.java</url>\r\n          <line>45</line>\r\n          <properties class=\"com.xxxx.server.config.security.JwtTokenUtil\" method=\"isTokenExpired\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 7f8d5205e5ec703e27a5f5afe4bd9a0cc42177c5)
+-+++ b/.idea/workspace.xml	(date 1701918301734)
+-@@ -7,10 +7,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="登录页面逻辑建立">
+--      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/pojo/RespBean.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--    </list>
+-+    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="公共返回对象" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -25,6 +22,16 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <option name="PREVIOUS_COMMIT_AUTHORS">
+-+      <list>
+-+        <option value="王湛轶" />
+-+      </list>
+-+    </option>
+-+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-+      <map>
+-+        <entry key="$PROJECT_DIR$" value="master" />
+-+      </map>
+-+    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-     <option name="RESET_MODE" value="HARD" />
+-   </component>
+-@@ -67,7 +74,7 @@
+-     "RunOnceActivity.OpenProjectViewOnStart": "true",
+-     "RunOnceActivity.ShowReadmeOnStart": "true",
+-     "WebServerToolWindowFactoryState": "false",
+--    "git-widget-placeholder": "master",
+-+    "git-widget-placeholder": "dev",
+-     "jdk.selected.JAVA_MODULE": "openjdk-21",
+-     "last_opened_file_path": "D:/Demos/yeb/yeb-server/src/main/java/com/xxxx/server/config/security",
+-     "node.js.detected.package.eslint": "true",
+-@@ -77,7 +84,7 @@
+-     "project.structure.last.edited": "模块",
+-     "project.structure.proportion": "0.15",
+-     "project.structure.side.proportion": "0.2",
+--    "settings.editor.selected.configurable": "editor.preferences.tabs",
+-+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+-     "vue.rearranger.settings.migration": "true"
+-   }
+- }]]></component>
+-@@ -128,7 +135,7 @@
+-       <workItem from="1701684845914" duration="143000" />
+-       <workItem from="1701685006902" duration="1094000" />
+-       <workItem from="1701737985547" duration="2404000" />
+--      <workItem from="1701842786349" duration="11218000" />
+-+      <workItem from="1701842786349" duration="12219000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="搭建项目框架">
+-       <option name="closed" value="true" />
+-@@ -146,18 +153,77 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1701851953912</updated>
+-     </task>
+--    <option name="localTasksCounter" value="3" />
+-+    <task id="LOCAL-00003" summary="公共返回对象">
+-+      <option name="closed" value="true" />
+-+      <created>1701917742359</created>
+-+      <option name="number" value="00003" />
+-+      <option name="presentableId" value="LOCAL-00003" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701917742359</updated>
+-+    </task>
+-+    <task id="LOCAL-00004" summary="公共返回对象">
+-+      <option name="closed" value="true" />
+-+      <created>1701918042573</created>
+-+      <option name="number" value="00004" />
+-+      <option name="presentableId" value="LOCAL-00004" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701918042573</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="5" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-     <option name="version" value="3" />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-+    <option name="RECENT_FILTERS">
+-+      <map>
+-+        <entry key="Branch">
+-+          <value>
+-+            <list>
+-+              <RecentGroup>
+-+                <option name="FILTER_VALUES">
+-+                  <option value="dev" />
+-+                </option>
+-+              </RecentGroup>
+-+              <RecentGroup>
+-+                <option name="FILTER_VALUES">
+-+                  <option value="master" />
+-+                </option>
+-+              </RecentGroup>
+-+            </list>
+-+          </value>
+-+        </entry>
+-+        <entry key="User">
+-+          <value>
+-+            <list>
+-+              <RecentGroup>
+-+                <option name="FILTER_VALUES">
+-+                  <option value="*" />
+-+                </option>
+-+              </RecentGroup>
+-+            </list>
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-     <option name="TAB_STATES">
+-       <map>
+-         <entry key="MAIN">
+-           <value>
+--            <State />
+-+            <State>
+-+              <option name="FILTERS">
+-+                <map>
+-+                  <entry key="branch">
+-+                    <value>
+-+                      <list>
+-+                        <option value="master" />
+-+                      </list>
+-+                    </value>
+-+                  </entry>
+-+                </map>
+-+              </option>
+-+            </State>
+-           </value>
+-         </entry>
+-       </map>
+-@@ -166,7 +232,8 @@
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="搭建项目框架" />
+-     <MESSAGE value="登录页面逻辑建立" />
+--    <option name="LAST_COMMIT_MESSAGE" value="登录页面逻辑建立" />
+-+    <MESSAGE value="公共返回对象" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="公共返回对象" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
+Index: .idea/shelf/___.xml
+===================================================================
+diff --git a/.idea/shelf/___.xml b/.idea/shelf/___.xml
+deleted file mode 100644
+--- a/.idea/shelf/___.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="在变基之前未提交的更改_[更改]" date="1701918301749" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[更改]/shelved.patch" />
+-  <option name="DESCRIPTION" value="在变基之前未提交的更改 [更改]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/在变基之前未提交的更改_[更改]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/在变基之前未提交的更改_[更改]/shelved.patch b/.idea/shelf/在变基之前未提交的更改_[更改]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/在变基之前未提交的更改_[更改]/shelved.patch	
++++ /dev/null	
+@@ -1,156 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AnalysisUIOptions\">\r\n    <option name=\"SCOPE_TYPE\" value=\"3\" />\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"cbff0af2-3ee2-4976-984f-f4543bf90110\" name=\"更改\" comment=\"登录页面逻辑建立\">\r\n      <change afterPath=\"$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/pojo/RespBean.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"AnnotationType\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"HARD\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/yeb-server/pom.xml\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"JavaAutoRunManager\">\r\n    <enabled-run-configurations>\r\n      <run-configuration type=\"MavenRunConfiguration\" name=\" [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate]\" />\r\n    </enabled-run-configurations>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <hideBySeverity>\r\n      <option value=\"11\" />\r\n      <option value=\"12\" />\r\n      <option value=\"13\" />\r\n      <option value=\"14\" />\r\n      <option value=\"15\" />\r\n      <option value=\"16\" />\r\n      <option value=\"100\" />\r\n      <option value=\"200\" />\r\n      <option value=\"300\" />\r\n    </hideBySeverity>\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YsP87f9FjiVetaJaqCGdiW80tD\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"jdk.selected.JAVA_MODULE\": \"openjdk-21\",\r\n    \"last_opened_file_path\": \"D:/Demos/yeb/yeb-server/src/main/java/com/xxxx/server/config/security\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"模块\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"editor.preferences.tabs\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"com.xxxx.pojo\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\config\\security\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\resources\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\service\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\pojo\" />\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\java\\com\\xxxx\\server\\mapper\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Demos\\yeb\\yeb-server\\src\\main\\resources\\config\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"CodeGenerator\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.xxxx.generator.CodeGenerator\" />\r\n      <module name=\"yeb-generator\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.xxxx.generator.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"应用程序.CodeGenerator\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"cbff0af2-3ee2-4976-984f-f4543bf90110\" name=\"更改\" comment=\"\" />\r\n      <created>1701311153472</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1701311153472</updated>\r\n      <workItem from=\"1701311154449\" duration=\"42203000\" />\r\n      <workItem from=\"1701684845914\" duration=\"143000\" />\r\n      <workItem from=\"1701685006902\" duration=\"1094000\" />\r\n      <workItem from=\"1701737985547\" duration=\"2404000\" />\r\n      <workItem from=\"1701842786349\" duration=\"11218000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"搭建项目框架\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701415472575</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701415472575</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"登录页面逻辑建立\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701851953912</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701851953912</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"搭建项目框架\" />\r\n    <MESSAGE value=\"登录页面逻辑建立\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"登录页面逻辑建立\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/config/security/JwtTokenUtil.java</url>\r\n          <line>45</line>\r\n          <properties class=\"com.xxxx.server.config.security.JwtTokenUtil\" method=\"isTokenExpired\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision d8b82fef07249a1bd6aec0f48e995c04752b7806)
+-+++ b/.idea/workspace.xml	(date 1701918238034)
+-@@ -7,10 +7,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="登录页面逻辑建立">
+--      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxxx/server/pojo/RespBean.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--    </list>
+-+    <list default="true" id="cbff0af2-3ee2-4976-984f-f4543bf90110" name="更改" comment="公共返回对象" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -25,6 +22,16 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <option name="PREVIOUS_COMMIT_AUTHORS">
+-+      <list>
+-+        <option value="王湛轶" />
+-+      </list>
+-+    </option>
+-+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-+      <map>
+-+        <entry key="$PROJECT_DIR$" value="master" />
+-+      </map>
+-+    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-     <option name="RESET_MODE" value="HARD" />
+-   </component>
+-@@ -67,7 +74,7 @@
+-     "RunOnceActivity.OpenProjectViewOnStart": "true",
+-     "RunOnceActivity.ShowReadmeOnStart": "true",
+-     "WebServerToolWindowFactoryState": "false",
+--    "git-widget-placeholder": "master",
+-+    "git-widget-placeholder": "dev",
+-     "jdk.selected.JAVA_MODULE": "openjdk-21",
+-     "last_opened_file_path": "D:/Demos/yeb/yeb-server/src/main/java/com/xxxx/server/config/security",
+-     "node.js.detected.package.eslint": "true",
+-@@ -77,7 +84,7 @@
+-     "project.structure.last.edited": "模块",
+-     "project.structure.proportion": "0.15",
+-     "project.structure.side.proportion": "0.2",
+--    "settings.editor.selected.configurable": "editor.preferences.tabs",
+-+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+-     "vue.rearranger.settings.migration": "true"
+-   }
+- }]]></component>
+-@@ -128,7 +135,7 @@
+-       <workItem from="1701684845914" duration="143000" />
+-       <workItem from="1701685006902" duration="1094000" />
+-       <workItem from="1701737985547" duration="2404000" />
+--      <workItem from="1701842786349" duration="11218000" />
+-+      <workItem from="1701842786349" duration="12219000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="搭建项目框架">
+-       <option name="closed" value="true" />
+-@@ -146,18 +153,77 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1701851953912</updated>
+-     </task>
+--    <option name="localTasksCounter" value="3" />
+-+    <task id="LOCAL-00003" summary="公共返回对象">
+-+      <option name="closed" value="true" />
+-+      <created>1701917742359</created>
+-+      <option name="number" value="00003" />
+-+      <option name="presentableId" value="LOCAL-00003" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701917742359</updated>
+-+    </task>
+-+    <task id="LOCAL-00004" summary="公共返回对象">
+-+      <option name="closed" value="true" />
+-+      <created>1701918042573</created>
+-+      <option name="number" value="00004" />
+-+      <option name="presentableId" value="LOCAL-00004" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701918042573</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="5" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-     <option name="version" value="3" />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-+    <option name="RECENT_FILTERS">
+-+      <map>
+-+        <entry key="Branch">
+-+          <value>
+-+            <list>
+-+              <RecentGroup>
+-+                <option name="FILTER_VALUES">
+-+                  <option value="dev" />
+-+                </option>
+-+              </RecentGroup>
+-+              <RecentGroup>
+-+                <option name="FILTER_VALUES">
+-+                  <option value="master" />
+-+                </option>
+-+              </RecentGroup>
+-+            </list>
+-+          </value>
+-+        </entry>
+-+        <entry key="User">
+-+          <value>
+-+            <list>
+-+              <RecentGroup>
+-+                <option name="FILTER_VALUES">
+-+                  <option value="*" />
+-+                </option>
+-+              </RecentGroup>
+-+            </list>
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-     <option name="TAB_STATES">
+-       <map>
+-         <entry key="MAIN">
+-           <value>
+--            <State />
+-+            <State>
+-+              <option name="FILTERS">
+-+                <map>
+-+                  <entry key="branch">
+-+                    <value>
+-+                      <list>
+-+                        <option value="master" />
+-+                      </list>
+-+                    </value>
+-+                  </entry>
+-+                </map>
+-+              </option>
+-+            </State>
+-           </value>
+-         </entry>
+-       </map>
+-@@ -166,7 +232,8 @@
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="搭建项目框架" />
+-     <MESSAGE value="登录页面逻辑建立" />
+--    <option name="LAST_COMMIT_MESSAGE" value="登录页面逻辑建立" />
+-+    <MESSAGE value="公共返回对象" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="公共返回对象" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/MailLogMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.MailLog;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface MailLogMapper extends BaseMapper<MailLog> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/MailLogMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/MailLogMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/MailLogMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/MailLogMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.MailLog;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface MailLogMapper extends BaseMapper<MailLog> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgContentMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.SysMsgContent;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface SysMsgContentMapper extends BaseMapper<SysMsgContent> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgContentMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgContentMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgContentMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgContentMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.SysMsgContent;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface SysMsgContentMapper extends BaseMapper<SysMsgContent> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Employee;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface EmployeeMapper extends BaseMapper<Employee> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Employee;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface EmployeeMapper extends BaseMapper<Employee> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/SalaryAdjustMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.SalaryAdjust;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface SalaryAdjustMapper extends BaseMapper<SalaryAdjust> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryAdjustMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryAdjustMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryAdjustMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryAdjustMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.SalaryAdjust;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface SalaryAdjustMapper extends BaseMapper<SalaryAdjust> {
+ 
+ }
+Index: .idea/sqlDataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sqlDataSources.xml b/.idea/sqlDataSources.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/sqlDataSources.xml	
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DdlMappings">
++    <mapping uuid="602c0714-9f46-4f0e-b57c-f76eda0bf832" name="project1 Mapping">
++      <data-sources db="cad706b1-386b-4879-adbd-6e1fd0229bfe" />
++      <scope>
++        <node negative="1">
++          <node kind="database" negative="1">
++            <node kind="schema" negative="1" />
++          </node>
++          <node kind="database" qname="@" />
++        </node>
++      </scope>
++    </mapping>
++  </component>
++</project>
+\ No newline at end of file
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/RoleMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Role;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface RoleMapper extends BaseMapper<Role> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/RoleMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/RoleMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/RoleMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/RoleMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Role;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface RoleMapper extends BaseMapper<Role> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/AdminMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Admin;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface AdminMapper extends BaseMapper<Admin> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/AdminMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/AdminMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/AdminMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/AdminMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Admin;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface AdminMapper extends BaseMapper<Admin> {
+ 
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"openjdk-21\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -7,6 +7,7 @@
+         <option value="$PROJECT_DIR$/pom.xml" />
+       </list>
+     </option>
++    <option name="workspaceImportForciblyTurnedOn" value="true" />
+   </component>
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/OplogMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Oplog;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface OplogMapper extends BaseMapper<Oplog> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/OplogMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/OplogMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/OplogMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/OplogMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Oplog;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface OplogMapper extends BaseMapper<Oplog> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeTrainMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.EmployeeTrain;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface EmployeeTrainMapper extends BaseMapper<EmployeeTrain> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeTrainMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeTrainMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeTrainMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeTrainMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.EmployeeTrain;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface EmployeeTrainMapper extends BaseMapper<EmployeeTrain> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeRemoveMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.EmployeeRemove;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface EmployeeRemoveMapper extends BaseMapper<EmployeeRemove> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeRemoveMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeRemoveMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeRemoveMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeRemoveMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.EmployeeRemove;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface EmployeeRemoveMapper extends BaseMapper<EmployeeRemove> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/NationMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Nation;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface NationMapper extends BaseMapper<Nation> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/NationMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/NationMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/NationMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/NationMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Nation;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface NationMapper extends BaseMapper<Nation> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/MenuMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Menu;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface MenuMapper extends BaseMapper<Menu> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/MenuMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/MenuMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/MenuMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/MenuMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Menu;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface MenuMapper extends BaseMapper<Menu> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.SysMsg;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface SysMsgMapper extends BaseMapper<SysMsg> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/SysMsgMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.SysMsg;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface SysMsgMapper extends BaseMapper<SysMsg> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/PoliticsStatusMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.PoliticsStatus;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface PoliticsStatusMapper extends BaseMapper<PoliticsStatus> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/PoliticsStatusMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/PoliticsStatusMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/PoliticsStatusMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/PoliticsStatusMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.PoliticsStatus;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface PoliticsStatusMapper extends BaseMapper<PoliticsStatus> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/JoblevelMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Joblevel;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface JoblevelMapper extends BaseMapper<Joblevel> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/JoblevelMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/JoblevelMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/JoblevelMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/JoblevelMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Joblevel;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface JoblevelMapper extends BaseMapper<Joblevel> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeEcMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.EmployeeEc;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface EmployeeEcMapper extends BaseMapper<EmployeeEc> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeEcMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeEcMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeEcMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/EmployeeEcMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.EmployeeEc;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface EmployeeEcMapper extends BaseMapper<EmployeeEc> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/PositionMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Position;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface PositionMapper extends BaseMapper<Position> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/PositionMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/PositionMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/PositionMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/PositionMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Position;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface PositionMapper extends BaseMapper<Position> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/MenuRoleMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.MenuRole;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface MenuRoleMapper extends BaseMapper<MenuRole> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/MenuRoleMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/MenuRoleMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/MenuRoleMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/MenuRoleMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.MenuRole;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface MenuRoleMapper extends BaseMapper<MenuRole> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/AppraiseMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Appraise;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface AppraiseMapper extends BaseMapper<Appraise> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/AppraiseMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/AppraiseMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/AppraiseMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/AppraiseMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Appraise;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface AppraiseMapper extends BaseMapper<Appraise> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/SalaryMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Salary;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface SalaryMapper extends BaseMapper<Salary> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/SalaryMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Salary;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface SalaryMapper extends BaseMapper<Salary> {
+ 
+ }
+Index: yeb-server/src/main/java/com/xxxx/server/mapper/DepartmentMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xxxx.server.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.xxxx.server.pojo.Department;\r\n\r\n/**\r\n * <p>\r\n *  Mapper 接口\r\n * </p>\r\n *\r\n * @author 2142\r\n * @since 2023-12-01\r\n */\r\npublic interface DepartmentMapper extends BaseMapper<Department> {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/yeb-server/src/main/java/com/xxxx/server/mapper/DepartmentMapper.java b/yeb-server/src/main/java/com/xxxx/server/mapper/DepartmentMapper.java
+--- a/yeb-server/src/main/java/com/xxxx/server/mapper/DepartmentMapper.java	
++++ b/yeb-server/src/main/java/com/xxxx/server/mapper/DepartmentMapper.java	
+@@ -2,6 +2,7 @@
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.xxxx.server.pojo.Department;
++import org.apache.ibatis.annotations.Mapper;
+ 
+ /**
+  * <p>
+@@ -11,6 +12,7 @@
+  * @author 2142
+  * @since 2023-12-01
+  */
++@Mapper
+ public interface DepartmentMapper extends BaseMapper<Department> {
+ 
+ }

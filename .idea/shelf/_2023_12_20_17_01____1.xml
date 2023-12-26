@@ -1,0 +1,109 @@
+<changelist name="在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1" date="1703062938843" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行签出之前于 2023/12/20 17:01 取消提交了更改 [更改]" />
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeTrainMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeTrainMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/EmployeeTrainMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SalaryAdjustMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SalaryAdjustMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/SalaryAdjustMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/MenuMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/MenuMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/MenuMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/MailLogMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/MailLogMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/MailLogMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SalaryMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SalaryMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/SalaryMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/RoleMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/RoleMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/RoleMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/AppraiseMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/AppraiseMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/AppraiseMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/PositionMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/PositionMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/PositionMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SysMsgMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SysMsgMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/SysMsgMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/PoliticsStatusMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/PoliticsStatusMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/PoliticsStatusMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/AdminMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/AdminMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/AdminMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeEcMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeEcMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/EmployeeEcMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/NationMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/NationMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/NationMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/MenuRoleMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/MenuRoleMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/MenuRoleMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/EmployeeMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/DepartmentMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/DepartmentMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/DepartmentMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/JoblevelMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/JoblevelMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/JoblevelMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SysMsgContentMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/SysMsgContentMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/SysMsgContentMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeRemoveMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/EmployeeRemoveMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/EmployeeRemoveMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/OplogMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/OplogMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/OplogMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/AdminRoleMapper.class" />
+    <option name="AFTER_PATH" value="yeb-server/target/classes/com/xxxx/server/mapper/AdminRoleMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2023_12_20_17_01_取消提交了更改_[更改]1/AdminRoleMapper.class" />
+  </binary>
+</changelist>
